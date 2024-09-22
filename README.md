@@ -2,6 +2,9 @@
 
 A simple and responsive weather application that provides real-time weather updates and forecasts for any city worldwide. Users can search for a city and get accurate weather information, including temperature, humidity, wind speed, and more.
 
+## Link
+https://rahul-prasad04.github.io/Check-the-weather/
+
 ## Features
 
 - **Real-Time Weather Data**: Fetches current weather information using the OpenWeatherMap API.
