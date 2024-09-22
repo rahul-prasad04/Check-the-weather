@@ -11,7 +11,7 @@ https://rahul-prasad04.github.io/Check-the-weather/
 - **City Suggestions**: Provides city name suggestions while typing, making it easier to find the desired location.
 - **Dark and Light Mode**: Users can switch between dark and light modes for better visibility.
 - **Responsive Design**: Works seamlessly on both desktop and mobile devices.
-- **Cute UI**: Styled using modern CSS techniques, including glassmorphism effects.
+- **Great UI**: Styled using modern CSS techniques, including glassmorphism effects.
 
 ## Technologies Used
 
