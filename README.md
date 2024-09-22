@@ -28,7 +28,7 @@ https://rahul-prasad04.github.io/Check-the-weather/
    git clone https://github.com/yourusername/Check-the-weather.git
 
 2. Navigate to the project directory:
-3. 
+
    ```bash
    cd Check-the-weather
    
