@@ -27,8 +27,12 @@ https://rahul-prasad04.github.io/Check-the-weather/
    ```bash
    git clone https://github.com/yourusername/Check-the-weather.git
 
-2. cd Check-the-weather
-3. Open index.html in your browser.
+2. Navigate to the project directory:
+3. 
+   ```bash
+   cd Check-the-weather
+   
+4. Open index.html in your browser.
 
 Usage
 1.Enter a city name in the search box.
