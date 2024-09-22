@@ -1,0 +1,333 @@
+/* General Styles */
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('./images/backgroung1.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* Center footer and container */
+}
+
+/* Container Styling with Glassmorphism Effect */
+.container {
+    width: 100%;
+    max-width: 380px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    backdrop-filter: blur(25px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+/* Toggle Switch */
+.mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.mode-toggle input {
+    display: none;
+}
+
+.mode-toggle label {
+    font-size: 1.5rem;
+}
+
+/* Dark Mode Styles */
+body.dark {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark .container {
+    background: rgba(18, 18, 18, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+body.dark .info {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+body.dark .search-box input {
+    background: rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+}
+
+body.dark .footer a {
+    color: #ffffff;
+}
+
+/* Dark Mode Background Overlay */
+body.dark::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Adjust the opacity for brightness */
+    z-index: -1;
+    /* Ensure it stays behind other elements */
+}
+
+
+/* Dark Mode Text Colors */
+body.dark {
+    color: #ffffff;
+    /* General text color */
+}
+
+body.dark h1,
+body.dark .info,
+body.dark .search-box input {
+    color: #ffffff;
+    /* Ensures headers and inputs are visible */
+}
+
+body.dark .search-box button {
+    background-color: #007BFF;
+    /* Button background */
+    color: white;
+    /* Button text color */
+}
+
+body.dark .footer a {
+    color: #ffffff;
+    /* Footer link color */
+}
+
+body.dark .hidden {
+    color: #ffcc00;
+    /* Error message color in dark mode */
+}
+
+/* Title Styling */
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #09023e;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+}
+
+/* Search Box */
+.search-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.search-box input {
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 100%;
+    max-width: 360px;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.4);
+    color: #333;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    transition: background 0.3s ease, box-shadow 0.5s ease;
+}
+
+.search-box input::placeholder {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.search-box input:focus {
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+}
+
+.search-box button {
+    padding: 10px 15px;
+    background-color: #0761bc;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.search-box button:hover {
+    background-color: #4da3e3;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Weather Info Styling */
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: #333;
+    text-align: center;
+    font-family: 'Quicksand',
+        sans-serif;
+}
+
+.info {
+    font-size: 1.4rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.info i {
+    margin-right: 10px;
+    font-size: 1.5rem;
+    /* Adjust icon size */
+    color: #053d75;
+}
+
+/* Error Message Styling */
+#error-message {
+    color: red;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Footer Styling */
+.footer {
+    position: fixed;
+    bottom: 13px;
+    display: flex;
+    gap: 15px;
+}
+
+.footer a {
+    color: #020a34;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer a:hover {
+    color: #4da3e3;
+    transform: scale(1.1);
+}
+
+/* Modal Styling */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.close {
+    cursor: pointer;
+    float: right;
+    font-size: 1.5rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.suggestions {
+    position: absolute;
+    top: 55px;
+    /* Adjust based on your layout */
+    width: 100%;
+    max-width: 400px;
+    max-height: 150px;
+    /* Set a max height for scrolling */
+    overflow-y: auto;
+    /* Enable scrolling if suggestions exceed max height */
+    background-color: rgba(120, 120, 120, 0.9);
+    /* Light background with transparency */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.suggestions div {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    /* Smooth background change */
+}
+
+.suggestions div:hover {
+    background-color: #e0e0e0;
+    /* Highlight on hover */
+}
+
+/* Optional: Add a border to the suggestion box */
+.suggestions {
+    border: 0px solid #ccc;
+    /* Light border for better separation */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .search-box input,
+    .search-box button {
+        font-size: 0.9rem;
+    }
+
+    .info {
+        font-size: 1.2rem;
+    }
+}

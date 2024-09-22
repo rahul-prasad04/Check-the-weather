@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Now</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Weather Now</h1>
+        <div class="search-box">
+            <input type="text" id="cityInput" placeholder="Enter city name" autocomplete="off">
+            <div id="suggestions" class="suggestions"></div>
+            <button id="searchBtn">Search</button>
+        </div>
+        <div class="weather-info">
+            <div class="info"><i class="fas fa-map-marker-alt"></i><span id="location"></span></div>
+            <div class="info"><i class="fas fa-thermometer-half"></i><span id="temperature"></span></div>
+            <div class="info"><i class="fas fa-cloud"></i><span id="description"></span></div>
+            <div class="info"><i class="fas fa-tint"></i><span id="humidity"></span></div>
+            <div class="info"><i class="fas fa-wind"></i><span id="wind-speed"></span></div>
+        </div>
+        <div id="error-message" class="hidden"></div>
+    </div>
+
+    <footer class="footer">
+        <a href="#about" title="About this website"><i class="fas fa-info-circle"></i></a>
+        <a href="https://github.com/rahul-prasad04" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/rahul-prasad-78b260324?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100085118190153&mibextid=ZbWKwL" target="_blank"
+            title="Facebook"><i class="fab fa-facebook"></i></a>
+    </footer>
+
+    <div id="about" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>About This Website</h2>
+            <p>This weather app provides real-time weather updates and forecasts for any city worldwide. Simply enter
+                the city name to
+                get accurate and up-to-date weather information at your fingertips!</p>
+        </div>
+    </div>
+    <div class="mode-toggle">
+        <input type="checkbox" id="toggle" />
+        <label for="toggle" id="toggle-label">🌙</label>
+    </div>
+    <div id="suggestions" class="suggestions"></div>
+
+
+</body>
+
+</html>
