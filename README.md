@@ -50,6 +50,3 @@ Icons used in the project are sourced from Font Awesome.
 
 ### How to Use
 - Replace `yourusername` in the clone URL with your actual GitHub username.
-
-Feel free to customize any part of the README as you see fit! Let me know if you need anything else.
-
