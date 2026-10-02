@@ -38,6 +38,16 @@ body {
     background: rgba(0, 0, 0, 0.28);
 }
 
+/* Reddish ambient tint across the page */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(239, 68, 68, 0.2) 0%, rgba(153, 27, 27, 0.42) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
 .container,
 .footer,
 .mode-toggle {
@@ -53,9 +63,9 @@ body {
     background: rgba(255, 255, 255, 0.3);
     border-radius: 25px;
     backdrop-filter: blur(25px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(185, 28, 28, 0.25);
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(254, 202, 202, 0.45);
     transition: transform 0.3s ease;
 }
 
@@ -132,7 +142,7 @@ body.dark .search-box input {
 }
 
 body.dark .search-box button {
-    background-color: #007BFF;
+    background-color: #dc2626;
     /* Button background */
     color: white;
     /* Button text color */
@@ -153,8 +163,8 @@ h1 {
     font-family: 'Dancing Script', cursive;
     font-size: 2.8rem;
     margin-bottom: 20px;
-    color: #09023e;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    color: #5f0f18;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
     font-weight: bold;
 }
 
@@ -198,7 +208,7 @@ h1 {
     position: relative;
     z-index: 11;
     padding: 10px 15px;
-    background-color: #0761bc;
+    background-color: #dc2626;
     border: none;
     color: white;
     font-size: 1rem;
@@ -206,12 +216,12 @@ h1 {
     border-radius: 50px;
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(185, 28, 28, 0.35);
 }
 
 .search-box button:hover {
-    background-color: #4da3e3;
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+    background-color: #ef4444;
+    box-shadow: 0 8px 40px rgba(239, 68, 68, 0.4);
     transform: translateY(-2px);
 }
 
@@ -248,7 +258,7 @@ h1 {
     margin-right: 10px;
     font-size: 1.5rem;
     /* Adjust icon size */
-    color: #053d75;
+    color: #b91c1c;
 }
 
 /* Error Message Styling */
@@ -273,13 +283,13 @@ h1 {
 }
 
 .footer a {
-    color: #020a34;
+    color: #5f0f18;
     font-size: 1.5rem;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .footer a:hover {
-    color: #4da3e3;
+    color: #ef4444;
     transform: scale(1.1);
 }
 
