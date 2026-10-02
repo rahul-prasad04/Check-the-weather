@@ -14,6 +14,37 @@ body {
     /* Center footer and container */
 }
 
+/* City photo, shown after a successful search */
+#city-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+    pointer-events: none;
+}
+
+#city-bg.visible {
+    opacity: 1;
+}
+
+#city-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.28);
+}
+
+.container,
+.footer,
+.mode-toggle {
+    position: relative;
+    z-index: 2;
+}
+
 /* Container Styling with Glassmorphism Effect */
 .container {
     width: 100%;
@@ -38,6 +69,7 @@ body {
     top: 20px;
     right: 20px;
     cursor: pointer;
+    z-index: 2;
 }
 
 .mode-toggle input {
@@ -82,8 +114,7 @@ body.dark::before {
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
     /* Adjust the opacity for brightness */
-    z-index: -1;
-    /* Ensure it stays behind other elements */
+    z-index: 1;
 }
 
 
@@ -164,6 +195,8 @@ h1 {
 }
 
 .search-box button {
+    position: relative;
+    z-index: 11;
     padding: 10px 15px;
     background-color: #0761bc;
     border: none;
@@ -236,6 +269,7 @@ h1 {
     bottom: 13px;
     display: flex;
     gap: 15px;
+    z-index: 2;
 }
 
 .footer a {

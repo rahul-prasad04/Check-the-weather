@@ -34,9 +34,60 @@ const fetchWeather = async (city) => {
 
         // Hide Error Message
         errorMessage.classList.add('hidden');
+        suggestionsDiv.innerHTML = '';
+        updateCityBackground(data.name, data.coord);
     } catch (error) {
         showError('Unable to fetch data. Please try again.');
     }
+};
+
+// City photo as page background (Wikimedia, no extra API key)
+const cityBg = document.getElementById('city-bg');
+
+const updateCityBackground = async (cityName, coord) => {
+    try {
+        const imageUrl = await findCityImage(cityName, coord?.lat, coord?.lon);
+        if (imageUrl) applyCityBackground(imageUrl);
+    } catch (error) {
+        // Keep the current background if no city photo is available
+    }
+};
+
+const findCityImage = async (cityName, lat, lon) => {
+    const fromTitle = await imageFromTitle(cityName);
+    if (fromTitle) return fromTitle;
+    if (lat == null || lon == null) return null;
+    return imageFromCoordinates(cityName, lat, lon);
+};
+
+const imageFromTitle = async (title) => {
+    const url = `https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&redirects=1&titles=${encodeURIComponent(title)}&prop=pageimages&piprop=thumbnail&pithumbsize=1600`;
+    const response = await fetch(url);
+    if (!response.ok) return null;
+    const data = await response.json();
+    const page = Object.values(data.query?.pages || {})[0];
+    if (!page || page.missing !== undefined) return null;
+    return page.thumbnail?.source || null;
+};
+
+const imageFromCoordinates = async (cityName, lat, lon) => {
+    const url = `https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&generator=geosearch&ggscoord=${lat}|${lon}&ggsradius=20000&ggslimit=8&prop=pageimages&piprop=thumbnail&pithumbsize=1600`;
+    const response = await fetch(url);
+    if (!response.ok) return null;
+    const data = await response.json();
+    const pages = Object.values(data.query?.pages || {}).filter((page) => page.thumbnail?.source);
+    if (pages.length === 0) return null;
+    const exact = pages.find((page) => page.title.toLowerCase() === cityName.toLowerCase());
+    return (exact || pages[0]).thumbnail.source;
+};
+
+const applyCityBackground = (url) => {
+    const img = new Image();
+    img.onload = () => {
+        cityBg.style.backgroundImage = `url("${url.replace(/"/g, '\\"')}")`;
+        cityBg.classList.add('visible');
+    };
+    img.src = url;
 };
 
 // Show Error Message
